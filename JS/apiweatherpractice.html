@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecasting</title>
+</head>
+<body>
+
+
+    <h1>Weather update</h1>
+    <input type="text" id="CITY">
+    <button onclick="getData()">Search</button>
+    <h2 id="cityName"></h2>
+    <p id="cityTemp"></p>
+    
+    <script>
+        let city= document.getElementById("CITY")
+        const apikey ='309fbf4d24ee6e2250d2b188c4f7983a'
+        let lat =19.4564
+        let lon = 75.7925
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}&units=metric`
+        
+        function getData(){
+            let cityName=document.getElementById('CITY').value
+            let url =`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apikey}&units=metric`
+            fetch(url)
+            .then((response)=>response.json())
+            .then((data)=>{
+
+                console.log(data)
+                showdata(data)
+            } )
+        }
+
+        function showdata(data){
+            document.getElementById('cityName').innerHTML=`CITY:${data.name}`
+            document.getElementById('cityTemp').innerHTML=`city:${data.main.temp}`
+        }
+        
+   
+   
+   
+   </script>
+
+
+<img src="/artworks-000248587648-9nza3b-t500x500.jpg " alt="link1" >
+</body>
+</html>
+
+
+<style>
+    
+
+
+</style>

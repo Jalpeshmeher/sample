@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+
+    <h1 id="heading1"
+    > heyy ram</h1>
+    <input type="text" id="inputName">
+    <button onclick="changeText()" >Change the text</button>
+    <button onclick="changeColor()">change the Color</button>
+    <button onclick="addclass()">add the class</button>
+
+    <script>
+function changeText(){
+    let name = document.getElementById('inputName').value
+    console.log(name)
+    console.log("done");
+    document.getElementById('heading1').innerHTML ="hello"+name+" we should believe"
+
+}
+function changeColor(){
+    document.getElementById('heading1').style.color = "red"
+}
+
+function addclass(){
+    document.getElementById("heading1").classList.add("YELLOW")
+}
+
+
+    </script>
+</body>
+</html>
+
+<style>
+.YELLOW{
+    background :blanchedalmond;
+    color :rgb(19, 57, 229);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+
+</style>

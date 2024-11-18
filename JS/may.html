@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="j1">
+
+    <input type="gender" id="j2">
+
+    <input type="age" id="j3">
+    <button onclick="addelement">press</button>
+
+  
+
+<script>
+
+    let input = document.getElementById('j1')
+    let list = document.getElementById('list')
+
+    let input1 = document.getElementById('j2')
+    let list2 = document.getElementById('list2')
+
+    let input3 = document.getElementById('j3')
+    let list3 = document.getElementById('list3')
+
+    function addelement(){
+
+        let liTag=document.createElement('li')
+        console.log(input1)
+        liTag.innerHTML = `
+                <p> ${input}${input1}${input3} </p>
+                <button> X </button>
+            `
+   
+        
+
+    liTag.classlist.add('text-black','bg-white')
+    list.appendChild(liTag)
+    }
+
+
+</script>
+
+</body>
+</html>
+
+
+<style>
+    .text-black{
+        color: rgb(3, 4, 4);
+    }
+    .bg-white{
+        background-color: aliceblue;
+    }
+</style>

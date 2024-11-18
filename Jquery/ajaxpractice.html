@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>AJAX</title>
+
+</head>
+<body>
+
+    <button>LOAD</button>
+    <p></p>
+    
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p").load("file.txt", function (responseTxt,statusTxt,xhr){
+                if (statusTxt = "success")
+                alert("External content loaded successfully!");
+            if(statusTxt ="error")
+            alert("Error:" +xhr.status + ":"+xhr.statusText);
+            });
+
+            $("p").get("file.txt", function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+          });
+
+        });
+    });
+</script>
+
+<style>
+
+    .file {
+
+        color: brown;
+    }
+</style>
