@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM (Document Object Model)</title>
+    <style>
+        .YELLOW{
+            background: rgb(0, 128, 255);
+            color: white;
+            font-family: consolas;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="heading1" >Hello World</h1>
+    <input type="text" name="" id="inputName">
+    <button onclick="changeText()">change Text</button>
+    <button onclick="changeColor()">change Color</button>
+    <button onclick="addClass()">Add Class</button>
+
+    <script>
+
+        function changeText(){
+            let name = document.getElementById('inputName').value
+            console.log(name)
+            console.log("done");
+            document.getElementById('heading1').innerHTML = "Hello "+name+" welcome to my website"
+        }
+
+        function changeColor(){
+            document.getElementById('heading1').style.color = "red"
+        }
+
+        function addClass(){
+            document.getElementById('heading1').classList.add('YELLOW')
+        }
+
+    </script>
+</body>
+</html>

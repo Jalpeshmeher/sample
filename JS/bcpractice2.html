@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="color" name="color1" id="j1" oninput="changecolor()" />
+    <input type="color" name="color2" id="j2" oninput="changecolor()" />
+    <input type="color" name="color3" id="j3" oninput="changecolor()" />
+    <p id="f1"></p>
+    <script>
+      function changecolor() {
+        let color1 = document.getElementById("j1").value;
+        let color2 = document.getElementById("j2").value;
+        let color3 = document.getElementById("j3").value;
+
+        let p = document.getElementById("f1");
+
+        console.log(color1, color2, color3);
+        document.body.style.backgroundImage = `linear-gradient(30deg,${color1},${color2},${color3})`;
+      }
+    </script>
+  </body>
+</html>

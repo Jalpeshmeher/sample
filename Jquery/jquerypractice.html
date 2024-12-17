@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+
+                $("#panel").slideToggle("slow");
+
+
+                $("#reveal").click(function(){
+                $("p").show();
+
+            });
+
+            $("#hide").click(function(){
+                $("p").hide();
+
+            });
+
+            $("#mix").click(function(){
+                $("p").toggle();
+            });
+
+            $("button").click(function(){
+                $("#div1").fadeToggle("slow")
+                $("#div2").fadeToggle(3000)
+                $("#div3").fadeToggle("fast")
+            })
+
+
+            });
+    
+
+
+        
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <div id="div1" style="width: 25px;height: 25px; background-color: black;"></div> <br>
+    <div id="div2" style="width: 25px;height: 25px; background-color: rgb(251, 231, 4);"></div> <br>
+    <div id="div3" style="width: 25px; height: 25px; background-color: red;"></div>
+
+    <div id="flip">Click to slide the panel down or up</div>
+<div id="panel"  style="width: 25px; height: 25px; background-color: red;"  id=""  ></div>
+<div id="panel"  style="width: 25px; height: 25px; background-color: rgb(57, 163, 64);" ></div>
+
+
+
+
+    <p>There's no God in this World</p>
+
+    <button id="reveal">Reveal</button>
+
+    <button id="hide">Hide it</button>
+
+    <button id="mix">Cocktail</button> 
+
+    <button id="display">Display</button>
+
+
+    <style>
+        #panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+
+
+
+    </style>
+
+    
+
+</body>
+</html>
+

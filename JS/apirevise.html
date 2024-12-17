@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="root"></div>
+<script>
+
+let url = "https://dummyjson.com/products";
+
+async function getData(){
+    let Response= await fetch(url);
+    let data= await Response.json();
+    showData(data);
+}
+
+function showData(data){
+    let products = data.products;
+    for (i=0; i < products.length;i++){
+        let product=products[i]
+        console.log(product);
+        let card =  document.createElement('div')
+        card.className = 'cardDiv'
+        card.innerHTML = `<h1> ${product.title}</h1>
+        <img src="${product.images[0]}" width="400px"/>
+        <p> ${product.brand}</p>
+        <p> ${product.price}</p>
+        
+        
+        
+        `
+
+        document.getElementById('root').appendChild(card)
+
+    }
+}
+getData();
+</script>
+
+
+
+
+</body>
+</html>
+
+
+<style>
+
+    #root{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+        .cardDiv{
+            background: rebeccapurple;
+            border: 10cm;
+            width: 550px;
+            text-align: center;
+            margin: 5px;
+
+        }
+
+
+        .cardDiv img{
+            aspect-ratio: 9/16;
+            object-fit: contain;
+            width: 50%;
+        }
+        .cardDiv p{
+            font-size: 25px;
+        }
+
+        .cardDiv h1{
+            font-size: 50px;
+        }
+
+
+</style>
