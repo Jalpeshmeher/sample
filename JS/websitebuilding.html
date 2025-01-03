@@ -73,27 +73,18 @@
         <input type="date">
         <div class="row">
 
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="form-group">
-                    <label>Adults</label>
-                    <div class="qty-buttons"><br>
-                        <input type="button" value="+" class="qtyminus" name="adults">
-                        <input type="text" name="adults" id="adults" value="" class="qty form-control" placeholder="0">
-                        <input type="button" value="-" class="qtyplus" name="adults">
-                    </div>
-            
-            
+           <div class="wrapper">
+            <span class="minus">-</span>
+            <span class="no">01</span>
+            <span class="plus">+</span>
 
-            
-                    <label > <style width: 108px;></style>Children (Below 10)</label> 
-                    <div class="qty-buttons"><br>
-                        <input type="button" value="+" class="qtyminus" name="children">
-                        <input type="text" name="children" id="children" value="" class="qty form-control"
-                            placeholder="0">
-                        <input type="button" value="-" class="qtyplus" name="children">
-                    </div>
-                </div>
-            </div>
+         
+                
+            </body>
+           </div>
+        
+        
+        </div>
         </div><br>
 
         <div class="form-group">
@@ -141,6 +132,21 @@
 </div>
 </div>
 
+<script>
+    const plus = document.querySelector(".plus"),
+    const minus = document.querySelector(".minus"),
+    const num = document.querySelector(".num");
+
+    let a =1 ;
+    plus.addEventListener("click" , ()=> {
+        a++ ;
+        a = (a < 10) ? "0" + a : a;
+        num.innerText = a;
+        console.log (a);
+    });
+
+    minus
+</script>
 
 
 
@@ -158,6 +164,34 @@
 </html>
 <style>
 
+    .wrapper{
+        height: 120px;
+        min-width: 380px;
+        display: flex;
+        align-items:center ;
+        background: #fff;
+        justify-content: center;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(red, green, blue, alpha);
+    }
+
+    .wrapper span {
+
+        width: 100%;
+        text-align: center;
+        font-size: 55px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .wrapper span.num {
+        font-size: 5 px;
+        border-right: 2px solid rgba(red, green, blue, alpha);
+        border-left: 2px solid rgba(red, green, blue, alpha);
+        pointer-events: none;
+    }
+
+
     .{
         margin: 0;
         padding: 0;
@@ -166,7 +200,10 @@
     }
 
     body
-    { display: flex;
+    {   
+        height: 100vh;
+        width: 100%;
+        display: flex;
         justify-content: center;
         align-items: center;
         background:url(./images/beachimage.jfif);
