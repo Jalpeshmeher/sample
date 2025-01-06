@@ -73,11 +73,11 @@
         <input type="date">
         <div class="row">
 
-           <div class="wrapper">
-            <span class="minus">-</span>
-            <span class="no">01</span>
-            <span class="plus">+</span>
+          <div id="screen">
+            <button id="increase">+</button>
+            <button id="decrease">-</button>
 
+        </div>
          
                 
             </body>
@@ -132,21 +132,6 @@
 </div>
 </div>
 
-<script>
-    const plus = document.querySelector(".plus"),
-    const minus = document.querySelector(".minus"),
-    const num = document.querySelector(".num");
-
-    let a =1 ;
-    plus.addEventListener("click" , ()=> {
-        a++ ;
-        a = (a < 10) ? "0" + a : a;
-        num.innerText = a;
-        console.log (a);
-    });
-
-    minus
-</script>
 
 
 
@@ -164,41 +149,7 @@
 </html>
 <style>
 
-    .wrapper{
-        height: 120px;
-        min-width: 380px;
-        display: flex;
-        align-items:center ;
-        background: #fff;
-        justify-content: center;
-        border-radius: 12px;
-        box-shadow: 0 5px 10px rgba(red, green, blue, alpha);
-    }
-
-    .wrapper span {
-
-        width: 100%;
-        text-align: center;
-        font-size: 55px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .wrapper span.num {
-        font-size: 5 px;
-        border-right: 2px solid rgba(red, green, blue, alpha);
-        border-left: 2px solid rgba(red, green, blue, alpha);
-        pointer-events: none;
-    }
-
-
-    .{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-
+    
     body
     {   
         height: 100vh;
@@ -209,10 +160,10 @@
         background:url(./images/beachimage.jfif);
     }
         
-    .container-fluid{
-        
-        
-     
+    .{
+        background-color: green;
+        color: blue;
+        font-size: 30;
     }
 
     .row{display: flex;
